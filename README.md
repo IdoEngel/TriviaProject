@@ -34,7 +34,7 @@ It demonstrates advanced concepts in **network programming, multithreading, data
 ---
 
 ## Tech Stack
-- **Language**: C++ (up to C++17)  
+- **Language**: C++ (up to C++17), C#
 - **Database**: SQLite  
 - **Networking**: TCP Sockets  
 - **Concurrency**: Multithreading with thread creation and destruction per session  
@@ -50,6 +50,6 @@ It demonstrates advanced concepts in **network programming, multithreading, data
 
 ## Contact
 For more details or inquiries:
-- 📞 Phone: 0532782264
+- 📞 Phone: +972 532782264
 - 📧 Email: idoengel0707@gmail.com
 - 🌐 GitHub: IdoEngel

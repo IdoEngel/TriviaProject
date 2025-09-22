@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="GUI.Controls.CyberFrame"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GUI.Controls"
+             mc:Ignorable="d" 
+             Background="Transparent">
+    <Canvas Width="800" Height="450" Background="Transparent">
+        <!-- Main frame -->
+        <Path Stroke="White"
+              StrokeThickness="6"
+              Data="M 20 20 L 750 20 L 750 40 L 770 40 L 770 430 L 720 430 L 700 450 L 20 450 L 20 420 L 0 400 L 0 20 Z"/>
+        <!-- Dots -->
+        <Ellipse Fill="White" Width="5" Height="5" Canvas.Left="730" Canvas.Top="10"/>
+        <Ellipse Fill="White" Width="5" Height="5" Canvas.Left="740" Canvas.Top="10"/>
+        <Ellipse Fill="White" Width="5" Height="5" Canvas.Left="750" Canvas.Top="10"/>
+        <!-- Squares -->
+        <Rectangle Fill="White" Width="10" Height="10" Canvas.Left="50" Canvas.Top="420"/>
+        <Rectangle Fill="White" Width="10" Height="10" Canvas.Left="65" Canvas.Top="420"/>
+        <Rectangle Fill="White" Width="10" Height="10" Canvas.Left="80" Canvas.Top="420"/>
+    </Canvas>
+</UserControl>

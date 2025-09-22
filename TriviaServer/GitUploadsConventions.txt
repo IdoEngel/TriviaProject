@@ -1,0 +1,46 @@
+COMMITS
+
+URL for the all the information:
+https://dev.to/ishanmakadia/git-commit-message-convention-that-you-can-follow-1709
+
+What kind of commits are there?
+
+build: Build related changes (eg: npm related/ adding external dependencies)
+chore: A code change that external user won't see (eg: change to .gitignore file or .prettierrc file)
+feat: A new feature
+fix: A bug fix
+docs: Documentation related changes
+refactor: A code that neither fix bug nor adds a feature. 
+	(eg: You can use this when there is semantic changes like renaming a variable/ function name)
+perf: A code that improves performance
+style: A code that is related to styling
+test: Adding new test or making changes to existing test
+
+How to write?
+<kind_of_commit>(<scope>) <msg> \n
+
+feat(auth): add support for OAuth2 login
+fix(validation): fix email validation bug
+docs(readme): update installation guide
+refactor(api): rename getUser to fetchUser
+perf(database): optimize query performance
+style(buttons): adjust padding for primary button
+test(login): add unit tests for login functionality
+
+How to go to a new line?
+Every "-m" is going down one line - 
+'git commit -m "at the top" -m "second line" -m "thried line"'
+
+BRANCHES
+
+URL with all the information:
+https://medium.com/@abhay.pixolo/naming-conventions-for-git-branches-a-cheatsheet-8549feca2534
+
+Tipes of branches:
+Develop
+Bugfix
+Feature
+Hotfix
+
+
+bugfix/bug-to-fix

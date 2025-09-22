@@ -1,0 +1,18 @@
+names of fields:
+
+<code><len><data> //not the json
+code max number - 255
+len max number - 4,294,967,295
+
+inside data: //the json
+	login:
+		from server - {"code" : <code>}
+		to server - 
+
+codes the server returns:
+9 - general error
+
+	1<> - login, signup, join or create room error/success codes - connection to other things error/success code
+		10 - sign up success
+		11 - log in success
+

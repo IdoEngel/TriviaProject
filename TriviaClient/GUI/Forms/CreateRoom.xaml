@@ -1,0 +1,155 @@
+﻿<Page x:Class="GUI.Forms.CreateRoom"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:GUI.Forms"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="CreateRoom" ShowsNavigationUI="True"
+      HorizontalAlignment="Stretch"
+VerticalAlignment="Stretch"
+      >
+
+
+
+
+
+
+    <Viewbox>
+
+
+
+        <Grid RenderTransformOrigin="0.494,0.5" Height="450" Width="800">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="GoBackBtn" 
+Content="go back" 
+Foreground="White"
+Background="#FF0B0C10"
+FontFamily="pack://application:,,,/data/#Cyber Alert"                            
+Click="GoBackBtn_Click" Margin="10,10,720,393" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="0.098"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border x:Name="LoginBorder" Background="{TemplateBinding Background}"
+                        CornerRadius="16">
+                                        <ContentPresenter HorizontalAlignment="Center" 
+                            VerticalAlignment="Center"/>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="AliceBlue" TargetName="LoginBorder"  />
+                                            <Setter Property="TextBlock.Foreground" Value="Black"  TargetName="LoginBorder" />
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+            </Button>
+            
+            <Border
+                Background="#FF0B0C10"
+                CornerRadius="6" Grid.ColumnSpan="2" Margin="200,30,200,30">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="15"
+                        Direction ="-90" 
+                        RenderingBias ="Quality" 
+                        ShadowDepth ="2" 
+                        Color ="Gray" />
+                </Border.Effect>
+                <StackPanel Orientation="Vertical"
+                    Margin="20">
+                    <Border Height="69" Width="326">
+                        <Border.Effect>
+                            <DropShadowEffect Color="#FF2F7C" BlurRadius="20" ShadowDepth="0"/>
+                        </Border.Effect>
+                        <TextBlock Text="create room" 
+                            Foreground="#FFFF2F7C"
+                            FontFamily="pack://application:,,,/data/#Cyber Alert"
+                               
+                               
+                            FontSize="35"
+                            HorizontalAlignment="Center"
+                            FontWeight="Bold"
+                            Padding="10" Margin="0,12,0,-54"
+               />
+                    </Border>
+                    <Grid Height="305" Width="335">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Label x:Name="numOfQ" Content="{Binding Value, ElementName=QuestionCountSlider, StringFormat=N0}" FontFamily="pack://application:,,,/data/#Cyber Alert" Margin="285,18,0,48" Grid.RowSpan="2" Grid.Row="1" Foreground="#FFFF2F7C"/>
+                        <Label x:Name="timePerQ" Content="{Binding Value, ElementName=TimePerQSlider, StringFormat=N0}" FontFamily="pack://application:,,,/data/#Cyber Alert" Margin="285,14,0,50" Grid.Row="2" Foreground="#FFFF2F7C" Grid.RowSpan="2"/>
+                        <Label x:Name="maxP" Content="{Binding Value, ElementName=MaxPlayersSlider, StringFormat=N0}" FontFamily="pack://application:,,,/data/#Cyber Alert" Margin="285,7,0,7" Grid.Row="3" Foreground="#FFFF2F7C"/>
+                        <Label FontFamily="pack://application:,,,/data/#Cyber Alert" Content="num of Q" HorizontalAlignment="Left" Margin="0,19,0,0" VerticalAlignment="Top" FontSize="16" Grid.Row="1" Foreground="#FF45A29E"/>
+                        <Label FontFamily="pack://application:,,,/data/#Cyber Alert" Content="max p" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Grid.Row="3" Foreground="#FF45A29E" Margin="0,8,0,0"/>
+                        <Label FontFamily="pack://application:,,,/data/#Cyber Alert" Content="time per Q" HorizontalAlignment="Left" Margin="0,12,0,0" VerticalAlignment="Top" FontSize="16" Grid.Row="2" Foreground="#FF45A29E"/>
+                        <Button x:Name="createBtn" 
+                            Content="create" 
+                            Foreground="White"
+                            Background="#FF45A29E"
+                            FontFamily="pack://application:,,,/data/#Cyber Alert"
+                            Margin="5,5,5,5"
+                            Click="CreateRoomBtn_Click" Grid.Row="4">
+                            <Button.Style>
+                                <Style TargetType="{x:Type Button}">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="{x:Type Button}">
+                                                <Border x:Name="LoginBorder" Background="{TemplateBinding Background}"
+                                                    CornerRadius="16">
+                                                    <ContentPresenter HorizontalAlignment="Center" 
+                                                        VerticalAlignment="Center"/>
+                                                </Border>
+                                                <ControlTemplate.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                        <Setter Property="Background" Value="AliceBlue" TargetName="LoginBorder"  />
+                                                        <Setter Property="TextBlock.Foreground" Value="Black"  TargetName="LoginBorder" />
+                                                    </Trigger>
+                                                </ControlTemplate.Triggers>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                        <TextBox x:Name="RoomNameBox" TextWrapping="Wrap" Text="" Margin="130,25,5,1" Height="25"/>
+                        <Label FontFamily="pack://application:,,,/data/#Cyber Alert" Content="room name" Margin="0,28,146,22" Grid.RowSpan="2" FontSize="16" Foreground="#FF45A29E"/>
+                        <Slider x:Name="QuestionCountSlider" TickFrequency="1"
+        IsSnapToTickEnabled="True"
+        SmallChange="1"
+        LargeChange="1" Minimum="1" Maximum="35" HorizontalAlignment="Left" Margin="130,19,0,0" VerticalAlignment="Top" Width="150" Grid.Row="1"/>
+                        <Slider x:Name="TimePerQSlider" TickFrequency="1"
+        IsSnapToTickEnabled="True"
+        SmallChange="1"
+        LargeChange="1" Minimum="1" Maximum="60" HorizontalAlignment="Left" Margin="130,0,0,0" VerticalAlignment="Center" Width="150" Grid.Row="2"/>
+                        <Slider x:Name="MaxPlayersSlider" TickFrequency="1"
+        IsSnapToTickEnabled="True"
+        SmallChange="1"
+        LargeChange="1" Minimum="1" Maximum="10" HorizontalAlignment="Left" Margin="130,11,0,0" VerticalAlignment="Top" Width="150" Grid.Row="3"/>
+                    </Grid>
+                </StackPanel>
+            </Border>
+        </Grid>
+    </Viewbox>
+</Page>

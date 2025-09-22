@@ -1,0 +1,247 @@
+﻿<Window x:Class="GUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:controls="clr-namespace:GUI"
+        xmlns:local="clr-namespace:GUI"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+
+    <Window.Background>
+        <ImageBrush ImageSource="Data/basic.png"
+                    TileMode="Tile"
+                    Viewport="0,0,250,250"
+                    ViewportUnits="Absolute"
+                    Stretch="None"/>
+    </Window.Background>
+    <Viewbox>
+        <Grid x:Name="mainGrid" Visibility="Visible" Height="450" Width="824">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="83*"/>
+                <ColumnDefinition Width="317*"/>
+            </Grid.ColumnDefinitions>
+
+
+            <Border Width="300"
+                Height="400"
+                Background="#0B0C10"
+                CornerRadius="6" Grid.Column="1" Margin="84,17,250,17">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="15"
+                        Direction ="-90" 
+                        RenderingBias ="Quality" 
+                        ShadowDepth ="2" 
+                        Color ="Gray" />
+                </Border.Effect>
+                <StackPanel Orientation="Vertical"
+                    Margin="20">
+                    <Border Height="53" Width="270">
+                        <Border.Effect>
+                            <DropShadowEffect Color="#FF2F7C" BlurRadius="20" ShadowDepth="0"/>
+                        </Border.Effect>
+                        <TextBlock Text="Trivia" 
+                            FontFamily="pack://application:,,,/data/#Cyber Alert"
+                            FontSize="50"
+                            HorizontalAlignment="Left"
+                            FontWeight="Bold"
+                            Padding="10" Width="218" Foreground="#FFFF2F7C"
+                            Margin="21,0,0,-20"
+                   />
+                    </Border>
+                    <Grid Height="303" Width="258">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Button x:Name="JoinRoomBtn" 
+                            FontFamily="pack://application:,,,/data/#Cyber Alert"
+                            Content="Join Room" 
+                            Foreground="White"
+                            Background="#45A29E"
+                            Margin="5,0,5,28" Click="JoinRoomBtn_Click">
+                            <Button.Style>
+                                <Style TargetType="{x:Type Button}">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="{x:Type Button}">
+                                                <Border x:Name="LoginBorder" Background="{TemplateBinding Background}"
+                                                    CornerRadius="16">
+                                                    <ContentPresenter HorizontalAlignment="Center" 
+                                                        VerticalAlignment="Center"/>
+                                                </Border>
+                                                <ControlTemplate.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                        <Setter Property="Background" Value="AliceBlue" TargetName="LoginBorder"  />
+                                                        <Setter Property="TextBlock.Foreground" Value="Black"  TargetName="LoginBorder" />
+                                                    </Trigger>
+                                                </ControlTemplate.Triggers>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                        <Button x:Name="CreateRoomBtn" 
+                            FontFamily="pack://application:,,,/data/#Cyber Alert"
+                            Content="Create Room" 
+                            Foreground="White"
+                            Background="#45A29E"
+                            Margin="5,0,5,28" Grid.Row="1"
+                            Click="CreateRoomBtn_Click">
+                            <Button.Style>
+                                <Style TargetType="{x:Type Button}">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="{x:Type Button}">
+                                                <Border x:Name="LoginBorder" Background="{TemplateBinding Background}"
+                                                    CornerRadius="16">
+                                                    <ContentPresenter HorizontalAlignment="Center" 
+                                                        VerticalAlignment="Center"/>
+                                                </Border>
+                                                <ControlTemplate.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                        <Setter Property="Background" Value="AliceBlue" TargetName="LoginBorder"  />
+                                                        <Setter Property="TextBlock.Foreground" Value="Black"  TargetName="LoginBorder" />
+                                                    </Trigger>
+                                                </ControlTemplate.Triggers>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                        <Button x:Name="StatusBtn" 
+                            FontFamily="pack://application:,,,/data/#Cyber Alert"
+                            Content="My status" 
+                            Foreground="White"
+                            Background="#45A29E"
+                            Margin="5,76,5,29"
+                            Click="StatusBtn_Click" Grid.Row="2" Grid.RowSpan="2">
+                            <Button.Style>
+                                <Style TargetType="{x:Type Button}">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="{x:Type Button}">
+                                                <Border x:Name="LoginBorder" Background="{TemplateBinding Background}"
+                                                    CornerRadius="16">
+                                                    <ContentPresenter HorizontalAlignment="Center" 
+                                                        VerticalAlignment="Center"/>
+                                                </Border>
+                                                <ControlTemplate.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                        <Setter Property="Background" Value="AliceBlue" TargetName="LoginBorder"  />
+                                                        <Setter Property="TextBlock.Foreground" Value="Black"  TargetName="LoginBorder" />
+                                                    </Trigger>
+                                                </ControlTemplate.Triggers>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                        <Button x:Name="logOutBtn" 
+    FontFamily="pack://application:,,,/data/#Cyber Alert"
+    Content="LOG OUT" 
+    Foreground="White"
+    Background="#FF2F7C"
+    Margin="44,62,44,0"
+    Click="logOutBtn_Click" Grid.Row="3">
+                            <Button.Style>
+                                <Style TargetType="{x:Type Button}">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="{x:Type Button}">
+                                                <Border x:Name="LoginBorder" Background="{TemplateBinding Background}"
+                            CornerRadius="16">
+                                                    <ContentPresenter HorizontalAlignment="Center" 
+                                VerticalAlignment="Center"/>
+                                                </Border>
+                                                <ControlTemplate.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                        <Setter Property="Background" Value="AliceBlue" TargetName="LoginBorder"  />
+                                                        <Setter Property="TextBlock.Foreground" Value="Black"  TargetName="LoginBorder" />
+                                                    </Trigger>
+                                                </ControlTemplate.Triggers>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+
+
+                        <Button x:Name="ScoresBtn" 
+                            FontFamily="pack://application:,,,/data/#Cyber Alert"
+                            Content="Best scores" 
+                            Foreground="White"
+                            Background="#45A29E"
+                            Margin="5,0,5,28"
+                            Click="ScoresBtn_Click" Grid.Row="2" RenderTransformOrigin="0.488,-1.083">
+                            <Button.Style>
+                                <Style TargetType="{x:Type Button}">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="{x:Type Button}">
+                                                <Border x:Name="LoginBorder" Background="{TemplateBinding Background}"
+                                                    CornerRadius="16">
+                                                    <ContentPresenter HorizontalAlignment="Center" 
+                                                        VerticalAlignment="Center"/>
+                                                </Border>
+                                                <ControlTemplate.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                        <Setter Property="Background" Value="AliceBlue" TargetName="LoginBorder"  />
+                                                        <Setter Property="TextBlock.Foreground" Value="Black"  TargetName="LoginBorder" />
+                                                    </Trigger>
+                                                </ControlTemplate.Triggers>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                    </Grid>
+                </StackPanel>
+            </Border>
+            <!-- CYBERPUNK FRAME WITHOUT CANVAS -->
+            <Grid Grid.ColumnSpan="2" d:IsHidden="True">
+                <!-- Main white outline frame using Path -->
+                <Path Stroke="White"
+                    StrokeThickness="6"
+                    Stretch="Fill"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"
+                    Margin="10"
+                    Data="M 20,20 L 780,20 L 780,40 L 800,40 L 800,460 L 750,460 L 730,480 L 20,480 L 20,450 L 0,430 L 0,20 Z"/>
+
+                <!-- Top-right dots -->
+                <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Top"
+                    Margin="0,10,30,0"
+        >
+                    <Ellipse Fill="White" Width="5" Height="5"/>
+                    <Ellipse Fill="White" Width="5" Height="5"/>
+                    <Ellipse Fill="White" Width="5" Height="5"/>
+                </StackPanel>
+
+                <!-- Bottom-left squares -->
+                <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Bottom"
+                    Margin="50,0,0,20"
+        >
+                    <Rectangle Fill="White" Width="10" Height="10"/>
+                    <Rectangle Fill="White" Width="10" Height="10"/>
+                    <Rectangle Fill="White" Width="10" Height="10"/>
+                </StackPanel>
+            </Grid>
+
+            <Frame x:Name="MainFrame"   NavigationUIVisibility="Hidden" Navigated="MainFrame_Navigated" Grid.ColumnSpan="2" d:IsHidden="True" />
+            <Frame x:Name="StartFrame"   NavigationUIVisibility="Hidden" Navigated="StartFrame_Navigated" Grid.ColumnSpan="2" d:IsHidden="True" />
+        </Grid>
+
+    </Viewbox>
+</Window>
